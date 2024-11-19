@@ -53,3 +53,4 @@ select nome, nomeUsuario, fotoPerfil, email, tele, sexo from cliente;
 select logo, nome, nomeFantasia, email, tele from restaurantes;
 
 
+

@@ -84,6 +84,13 @@ data DATE,
  primary key (cod)
  );
  
+ create table assinatura(
+ cod int,
+ valorAssinatura int,
+ descricao varchar(50),
+ primary key (cod)
+ );
+ 
  CREATE TABLE clienterestaurantes(
 	FK_nome_cliente varchar(11),
     FK_cnpj_restaurantes varchar(20),
