@@ -23,5 +23,10 @@ select r.nome from restaurantes r
 inner join itensrestaurantes ir 
 on ir.FK_cnpj_restaurantes = r.cnpj;
 -- perguntar ao David se precisa de condição.
-	
+
+-- tela de chat1 do cliente
+select logo, nome, chat,data from restaurantes;
+select foto, nomeUsuario, chat, data from chefes;
+
+-- tela de chat2 do cliente 
 
