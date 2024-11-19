@@ -29,4 +29,25 @@ select logo, nome, chat,data from restaurantes;
 select foto, nomeUsuario, chat, data from chefes;
 
 -- tela de chat2 do cliente 
+select nome, foto, data, chat from chefes;
+
+-- tela de chat1 do chefe
+select nomeUsuario, fotoPerfil, chat, data from cliente; 
+
+-- tela de chat2 do chefe 
+select fotoPerfil, nomeUsuario, chat, data from cliente;
+
+-- tela de chat1 do restaurante
+select fotoPerfil, nomeUsuario, chat, data from cliente;
+
+-- tela de chat2 do restaurante
+select nomeUsuario, fotoPerfil, chat, data from cliente; 
+
+-- tela de perfil do chefe 
+select nome, nomeUsuario, foto, email, tele, sexo from chefes;
+
+-- tela de perfil do cliente 
+select nome, nomeUsuario, fotoPerfil, email, tele, sexo from cliente;
+
+-- tela de perfil do restaurante
 
