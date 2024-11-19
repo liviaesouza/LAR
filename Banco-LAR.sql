@@ -4,7 +4,8 @@ use bancolar;
 create table restaurantes (
 cnpj varchar (20),
 tele varchar (20),
-nome varchar(9),
+nomeFantasia varchar(15),
+nome varchar(30),
 post varchar (500),
 quantpost varchar (500),
 avaliacao varchar (4),
@@ -15,18 +16,23 @@ local varchar(15),
 foto varchar(10),
 email varchar(30),
 senha varchar(10),
+data DATE,
 taxa int,
  primary key (cnpj)
  );
 
  create table cliente (
 nome varchar(9),
+nomeUsuario varchar(20),
+sexo varchar(10),
+fotoPerfil varchar(10),
 nasc date,
 tele varchar(20),
 loc varchar(15),
 email varchar(30),
 senha varchar(10),
-chat varchar(50), 
+chat varchar(1000), 
+data DATE,
  primary key (nome)
  );
  
@@ -34,6 +40,7 @@ chat varchar(50),
  senha varchar (10),
  foto varchar (10),
  nome varchar(20),
+ sexo varchar(10),
  nomeUsuario varchar (20),
  quantpost varchar (500),
  post varchar (500), 
@@ -43,6 +50,8 @@ chat varchar(50),
  curriculo varchar(100),
  tele varchar(20),
  taxa int,
+ chat varchar(1000),
+ data DATE,
  primary key (senha)
  );
  
