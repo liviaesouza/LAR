@@ -50,4 +50,6 @@ select nome, nomeUsuario, foto, email, tele, sexo from chefes;
 select nome, nomeUsuario, fotoPerfil, email, tele, sexo from cliente;
 
 -- tela de perfil do restaurante
+select logo, nome, nomeFantasia, email, tele from restaurantes;
+
 
