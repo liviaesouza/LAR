@@ -84,6 +84,29 @@ data DATE,
  primary key (cod)
  );
  
+ create table assinatura(
+ cod int,
+ valorAssinatura int,
+ descricao varchar(150),
+ primary key (cod)
+ );
+ 
+ create table chefesassinatura(
+ FK_senha_chefes varchar(10),
+ FK_cod_assinatura int,
+ primary key(FK_senha_chefes, FK_cod_assinatura),
+ foreign key(FK_senha_chefes)references chefes(senha),
+ foreign key(FK_cod_assinatura)references assinatura(cod)
+ );
+ 
+ create table restaurantesassinatura(
+ FK_cnpj_restaurantes varchar(20),
+ FK_cod_assinatura int,
+ primary key(FK_cnpj_restaurantes, FK_cod_assinatura),
+ foreign key(FK_cnpj_restaurantes) references restaurantes(cnpj),
+ foreign key(FK_cod_assinatura) references assinatura(cod)
+ );
+ 
  CREATE TABLE clienterestaurantes(
 	FK_nome_cliente varchar(11),
     FK_cnpj_restaurantes varchar(20),
@@ -128,8 +151,40 @@ primary key(FK_nome_itens, FK_cnpj_restaurantes),
 foreign key(FK_nome_itens) references itens(nome),
 foreign key(FK_cnpj_restaurantes) references restaurantes(cnpj)
 );
- 
- 
- 
- 
 
+create table cupons(
+cod int,
+desconto varchar(20),
+comprasApartirDoValor varchar(20),
+primary key(cod)
+);
+
+create table delivery(
+cod int,
+comprasApartirDoValor varchar(20),
+primary key(cod)
+);
+
+create table restaurantesdelivery(
+FK_cnpj_restaurantes varchar(20),
+FK_cod_delivery int,
+primary key(FK_cnpj_restaurantes, FK_cod_delivery),
+foreign key(FK_cnpj_restaurantes) references restaurantes(cnpj),
+foreign key(FK_cod_delivery) references delivery(cod)
+);
+
+create table chefesdelivery(
+FK_senha_chefes varchar(10),
+FK_cod_delivery int,
+primary key(FK_senha_chefes, FK_cod_delivery),
+foreign key(FK_senha_chefes) references chefes(senha),
+foreign key(FK_cod_delivery) references delivery(cod)
+);
+
+ create table cuponscliente(
+ FK_cod_cupons int,
+ FK_nome_cliente varchar(9),
+ primary key(FK_cod_cupons, FK_nome_cliente),
+ foreign key(FK_cod_cupons) references cupons(cod),
+ foreign key(FK_nome_cliente) references cliente(nome)
+ );
